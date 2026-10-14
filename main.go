@@ -3,9 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(max([]int{10, 5, 30, 20})) // 30 true
-	fmt.Println(max([]int{-5, -2, -10}))   // -2 true
-	fmt.Println(max([]int{}))              // 0 false
+	num, bool_val := max([]int{10, 20, 30})
+	fmt.Println(num, bool_val)
 }
 
 func max(nums []int) (int, bool) {
