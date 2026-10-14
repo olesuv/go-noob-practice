@@ -3,23 +3,16 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(countOccurrences([]int{1, 2, 2, 3, 2}, 2)) // 3
-	fmt.Println(countOccurrences([]int{1, 2, 3}, 5))       // 0
-	fmt.Println(countOccurrences([]int{}, 1))              // 0
+	fmt.Println(findIndex([]int{10, 20, 30}, 20)) // 1
+	fmt.Println(findIndex([]int{10, 20, 30}, 50)) // -1
+	fmt.Println(findIndex([]int{}, 10))           // -1
 }
 
-func countOccurrences(nums []int, target int) int {
-	if len(nums) == 0 {
-		return 0
-	}
-
-	counter := 0
-
-	for _, num := range nums {
+func findIndex(nums []int, target int) int {
+	for index, num := range nums {
 		if num == target {
-			counter += 1
+			return index
 		}
 	}
-
-	return counter
+	return -1
 }
