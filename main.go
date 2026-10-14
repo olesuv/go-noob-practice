@@ -3,19 +3,23 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(sumEven([]int{1, 2, 3, 4, 5, 6})) // 12
-	fmt.Println(sumEven([]int{1, 3, 5}))          // 0
-	fmt.Println(sumEven([]int{}))                 // 0
+	fmt.Println(max([]int{10, 5, 30, 20})) // 30 true
+	fmt.Println(max([]int{-5, -2, -10}))   // -2 true
+	fmt.Println(max([]int{}))              // 0 false
 }
 
-func sumEven(nums []int) int {
-	sum := 0
+func max(nums []int) (int, bool) {
+	if len(nums) == 0 {
+		return 0, false
+	}
+
+	max := nums[0]
 
 	for _, num := range nums {
-		if num%2 == 0 {
-			sum += num
+		if num > max {
+			max = num
 		}
 	}
 
-	return sum
+	return max, true
 }
