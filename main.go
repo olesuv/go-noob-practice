@@ -3,22 +3,23 @@ package main
 import "fmt"
 
 func main() {
-	num, bool_val := max([]int{10, 20, 30})
-	fmt.Println(num, bool_val)
+	fmt.Println(countOccurrences([]int{1, 2, 2, 3, 2}, 2)) // 3
+	fmt.Println(countOccurrences([]int{1, 2, 3}, 5))       // 0
+	fmt.Println(countOccurrences([]int{}, 1))              // 0
 }
 
-func max(nums []int) (int, bool) {
+func countOccurrences(nums []int, target int) int {
 	if len(nums) == 0 {
-		return 0, false
+		return 0
 	}
 
-	max := nums[0]
+	counter := 0
 
 	for _, num := range nums {
-		if num > max {
-			max = num
+		if num == target {
+			counter += 1
 		}
 	}
 
-	return max, true
+	return counter
 }
