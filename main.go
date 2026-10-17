@@ -17,12 +17,7 @@ func countWords(words []string) map[string]int {
 	wordsCounts := make(map[string]int)
 
 	for _, word := range words {
-		count, exists := wordsCounts[word]
-		if exists {
-			wordsCounts[word] = count + 1
-		} else {
-			wordsCounts[word] = 1
-		}
+		wordsCounts[word]++
 	}
 
 	return wordsCounts
